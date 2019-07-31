@@ -65,7 +65,7 @@ class UserController extends ApiController
         else
             $input['username'] = $this->createUniqueUsername("", $input['name']);
         $user = User::create($input);
-        $message = 'حساب شما با موفقیت ساخته شد به خانواده آداک اسپا خوش آمدید';
+        $message = 'حساب شما با موفقیت ساخته شد به خانواده Adak اسپا خوش آمدید';
         $this->sendSMS($input['phone_number'],$message );
         return $this->respondSuccessfully($message,$user);
 
