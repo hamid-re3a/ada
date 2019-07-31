@@ -7,6 +7,7 @@ import Services from 'comps/pages/Services';
 import Courses from 'comps/pages/Courses';
 import Reserve from 'comps/pages/Reserve';
 import Track from 'comps/pages/Track';
+import Gallery from 'comps/pages/Gallery';
 import Blog from 'comps/pages/Blog';
 import BlogPost from 'comps/pages/BlogPost';
 import About from 'comps/pages/About';
@@ -39,6 +40,7 @@ export default function Routes() {
         <Route exact path="/courses" component={Courses} />
         <Route exact path="/reserve" component={Reserve} />
         <Route exact path="/track" component={Track} />
+        <Route exact path="/gallery" component={Gallery} />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:id" component={BlogPost} />
         <Route exact path="/about" component={About} />

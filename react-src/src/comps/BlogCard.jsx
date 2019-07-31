@@ -42,6 +42,7 @@ const styles = {
   },
   img: {
     width: 256,
+    objectFit: 'cover',
   },
 };
 

@@ -8,7 +8,7 @@ import {
 
 import PropTypes from 'prop-types'
 import Template from 'comps/Template';
-import ServiceCard from 'comps/ServiceCard';
+import GalleryCard from 'comps/GalleryCard';
 import data from 'data';
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -33,7 +33,7 @@ class DesktopContainer extends Component {
         <Visibility
           once={false}
         >
-          <ResponsiveProps itemsPerRow={5}>
+          <ResponsiveProps itemsPerRow={3}>
             {children}
           </ResponsiveProps>
         </Visibility>
@@ -89,31 +89,29 @@ const ResponsiveContainer = ({ children }) => (
     <MobileContainer>{children}</MobileContainer>
   </div>
 )
-const ResponsiveServiceItems = ({ itemsPerRow , title ,subtitle , data_collection }) => (
+const ResponsiveServiceItems = ({ itemsPerRow , title, data_collection }) => (
   <Container>
   <Segment basic>
 
     <br />
-    <Header as='h2'>{title}</Header>
-    {subtitle ? <Header as='h3' style={{lineHeight:'.5em'}}>({subtitle})</Header> : null }
+    <Header as='h1'>{title}</Header>
     <Divider />
     <br />
     <br />
 
     <Card.Group itemsPerRow={itemsPerRow}>
       {data_collection.map(s =>
-        <ServiceCard key={s.name} {...s} />
+        <GalleryCard key={s.name} {...s} />
       )}
     </Card.Group>
   </Segment>
 </Container>
 );
-function Services() {
+function Gallery() {
   return (
     <Template gray={false}>
       <ResponsiveContainer>
-        <ResponsiveServiceItems title="خدمات مرکز ماساژ Adak Spa" data_collection={data.services}/>
-        <ResponsiveServiceItems title="شعبه استخر Adak" subtitle="استخر پاس قوامین" data_collection={data.poolServices}/>
+        <ResponsiveServiceItems title="گالری" data_collection={data.images}/>
       </ResponsiveContainer>
     </Template>
   );
@@ -126,4 +124,4 @@ const styles = {
   },
 };
 
-export default Services;
+export default Gallery;

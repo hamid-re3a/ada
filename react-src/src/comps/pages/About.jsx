@@ -23,7 +23,7 @@ function About() {
               </Segment>
             </Grid.Column>
             <Grid.Column mobile={16} computer={11}>
-            <Divider horizontal>آداک اسپا ارائه‌دهنده‌ی بهترین خدمات ماساژ</Divider>
+            <Divider horizontal>Adak Spa ارائه‌دهنده‌ی بهترین خدمات ماساژ</Divider>
           <br/>
           <p>
             اینجا جایی است که شما ‌‌می‌توانید حداقل یک ماساژ و بهسازی صورت در یک ملاقات روزانه داشته باشید. حدود ۸۰ درصد از اسپاها، اسپاهای روزانه هستند.

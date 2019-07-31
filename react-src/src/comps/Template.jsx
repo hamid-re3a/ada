@@ -41,6 +41,7 @@ const items = [
   { key: 'courses', name: 'دوره‌های آموزشی', href: '/courses' },
   { key: 'reserve', name: 'رزرو', href: '/reserve' },
   { key: 'track', name: 'پیگیری رزرو', href: '/track' },
+  { key: 'gallery', name: 'گالری', href: '/gallery' },
   { key: 'blog', name: 'بلاگ', href: '/blog' },
   { key: 'about', name: 'درباره ما', href: '/about' },
   { key: 'contact', name: 'تماس با ما', href: '/contact' },

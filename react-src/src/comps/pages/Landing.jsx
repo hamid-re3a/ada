@@ -104,7 +104,7 @@ const Hero = ({ mobile }) => (
   <div style={!mobile ? styles.heroRoot : styles.heroRootMobile}>
     <Center >
       <Header as='h1' style={{ color: 'white', textShadow: '0 0 3px black' }}>رزرو ماساژ</Header>
-      <Header as='h3' style={{ color: 'white', textShadow: '0 0 3px black' }}>خدمات حرفه‌ای ماساژ در آداک اسپا تجربه کنید</Header>
+      <Header as='h3' style={{ color: 'white', textShadow: '0 0 3px black' }}>خدمات حرفه‌ای ماساژ در Adak Spa تجربه کنید</Header>
       <div style={{ height: 32 }} />
       <Link to='/reserve'><Button color="violet">رزرو</Button></Link>
       <Link to='/services'><Button color="white" >مشاهده خدمات</Button></Link>
@@ -122,7 +122,7 @@ const Options = () => (
       <Grid.Row>
         <Grid.Column width={8}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            خدمات حرفه‌ای ماساژ در آداک اسپا
+            خدمات حرفه‌ای ماساژ در Adak Spa
           </Header>
           <p style={{ fontSize: '1.33em', textAlign: 'justify' }}>
             اینجا جایی است که شما ‌‌می‌توانید حداقل یک ماساژ و بهسازی صورت در یک ملاقات روزانه داشته باشید. حدود ۸۰ درصد از اسپاها، اسپاهای روزانه هستند.
@@ -149,7 +149,7 @@ const Options = () => (
 
 const ResponsiveServiceItems = ({ itemsPerRow }) => (
   <Container style={styles.bodyRoot} >
-    <Header as='h1'>خدمات مرکز ماساژ</Header>
+    <Header as='h1'>انواع ماساژ</Header>
     <div class="ui divider"></div>
     <Segment basic>
       <Card.Group itemsPerRow={itemsPerRow}>
@@ -158,7 +158,7 @@ const ResponsiveServiceItems = ({ itemsPerRow }) => (
         <ServiceCard key={data.services[2].name} {...data.services[2]} />
       </Card.Group>
       <div className='center' style={{ margin: 32 }}>
-        <Button as={Link} to='/services' size="huge">مشاهده همه‌ی خدمات</Button>
+        <Button as={Link} to='/services' size="huge">مشاهده همه‌</Button>
       </div>
     </Segment>
   </Container>
@@ -179,7 +179,7 @@ function Landing() {
             <Grid.Row textAlign='center'>
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  آداک اسپا
+                  Adak Spa
                 </Header>
                 <p style={{ fontSize: '1.33em' }}>تجربه‌ منحصر به فرد آرامش</p>
               </Grid.Column>
@@ -227,7 +227,7 @@ const styles = {
   },
   heroRootMobile: {
     backgroundColor: '#e0e0e0',
-    backgroundImage: `url('/img/lobby2.jpg')`,
+    backgroundImage: `url('/img/building.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
