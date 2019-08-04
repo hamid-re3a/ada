@@ -28,7 +28,7 @@ class OrderController extends AuthController
             'gender' => array('required', 'in:male,female'),
             'phone_number' => array('required'),
             'date' => array('required'),
-            'time' => array('required'),
+            'time' => array('required','number','max:20'),
             'service_id' => array('required','exists:services'),
         );
 

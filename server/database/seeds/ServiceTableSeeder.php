@@ -32,16 +32,16 @@ class ServiceTableSeeder extends Seeder
             ["id"=> 13, "name"=> "حمام سنتی ", "description"=> "به همراه اسکرایپ بدن", "cost"=> "50,000"],
         ];
         $courses= [
-            ["id"=> 14, "name"=> "کاربر ماساژ", "description"=> "", "cost"=> "24,500,000"],
-            ["id"=> 15, "name"=> "ماساژ سنگ", "description"=> "", "cost"=> "15,400,000"],
-            ["id"=> 16, "name"=> "ماساژ سوئدی", "description"=> "", "cost"=> "13,600,000"],
-            ["id"=> 17, "name"=> "ماساژ آروماتراپی", "description"=> "", "cost"=> "13,800,000"],
-            ["id"=> 18, "name"=> "ماساژ بافت عمقی", "description"=> "", "cost"=> "13,600,000"],
-            ["id"=> 19, "name"=> "ماساژ شمع", "description"=> "", "cost"=> "14,000,000"],
-            ["id"=> 20, "name"=> "ماساژ تای", "description"=> "", "cost"=> "16,600,000"],
-            ["id"=> 21, "name"=> "ماساژ رفلکسولوژی", "description"=> "", "cost"=> "15,200,000"],
-            ["id"=> 22, "name"=> "ماساژ کمپرس گیاهی", "description"=> "", "cost"=> "15,000,000"],
-            ["id"=> 23, "name"=> "ماساژ ایرانی", "description"=> "", "cost"=> "15,200,000"],
+            ["id"=> 14, "name"=> "کاربر ماساژ", "description"=> "", "cost"=> "2,450,000"],
+            ["id"=> 15, "name"=> "ماساژ سنگ", "description"=> "", "cost"=> "1,540,000"],
+            ["id"=> 16, "name"=> "ماساژ سوئدی", "description"=> "", "cost"=> "1,360,000"],
+            ["id"=> 17, "name"=> "ماساژ آروماتراپی", "description"=> "", "cost"=> "1,380,000"],
+            ["id"=> 18, "name"=> "ماساژ بافت عمقی", "description"=> "", "cost"=> "1,360,000"],
+            ["id"=> 19, "name"=> "ماساژ شمع", "description"=> "", "cost"=> "1,400,000"],
+            ["id"=> 20, "name"=> "ماساژ تای", "description"=> "", "cost"=> "1,660,000"],
+            ["id"=> 21, "name"=> "ماساژ رفلکسولوژی", "description"=> "", "cost"=> "1,520,000"],
+            ["id"=> 22, "name"=> "ماساژ کمپرس گیاهی", "description"=> "", "cost"=> "1,500,000"],
+            ["id"=> 23, "name"=> "ماساژ ایرانی", "description"=> "", "cost"=> "1,520,000"],
         ];
 
         foreach($services as $service){

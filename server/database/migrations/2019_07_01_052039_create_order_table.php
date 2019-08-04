@@ -13,7 +13,7 @@ class CreateOrderTable extends Migration
      */
     public function up()
     {
-        Schema::create('order', function (Blueprint $table) {
+        Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->bigInteger('user_id')->unsigned();
             $table->string('track_number');
@@ -21,8 +21,9 @@ class CreateOrderTable extends Migration
             $table->string('phone_number');
             $table->integer('service_id');
             $table->datetime('date');
-            $table->time('time');
-            $table->enum('status', ['waiting','approved','canceled'])->nullable();
+            $table->integer('time_slot');
+            $table->string('trans_id');
+            $table->enum('status', ['waiting','paid','canceled'])->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
