@@ -14,22 +14,21 @@ export const ACT_delUser = () => ({
 
 export const ACT_signup = (username, password, passwordConfirm) =>
   (dispatch, getState, API) => { 
-    API.users.create({name: username, phone_number: username, password, password_confirmation:passwordConfirm})
-    .then(res => {
-      console.log(res);
-    });
+    return API.users.create({name: username, phone_number: username, password, password_confirmation:passwordConfirm})
+    
   }
 
 export const ACT_signin = (username, password) =>
   (dispatch, getState, API) => {
     // if (username === "admin" && password === "123")
     //   dispatch(ACT_setUser({ username, accessToken: '1qaz!QAZ' }));
-    API.users.login(username, password).then(resp => {
-      console.log(resp);
-      if (resp.success !== false) {
-        dispatch(ACT_setUser({ accessToken: resp.data.data.access_token }));
+    API.users.login(username, password).then(rs=>{
+      if (rs.success !== false) {
+        dispatch(ACT_setUser({ accessToken: rs.data.data.access_token }));
       }
-    });
+      
+    })
+    return API.users.login(username, password);
   }
 
 export const ACT_signout = () => dispatch => dispatch(ACT_delUser());

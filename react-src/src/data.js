@@ -5,7 +5,7 @@ export default {
     '۰۲۱-۴۴۶۳۲۴۹۲',
     '۰۲۱-۴۴۶۷۳۴۹۶',
   ],
-  manager: 'جناب آقای کیانی آذر',
+  manager: 'جناب آقای بابالو',
   socialMedia: {
     instagram: "https://www.instagram.com/adakspa",
     telegram: "https://www.t.me/Adakspa",
@@ -31,7 +31,7 @@ export default {
     {id:17,img: "img/oil.jpg"},
   ],
   services: [
-    {id: 0, name: "آرماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 60, cost: "۱۶۰,۰۰۰", img: "img/insta/aromatherapy02.jpg"},
+    {id: 0, name: "آروماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 60, cost: "۱۶۰,۰۰۰", img: "img/insta/aromatherapy02.jpg"},
     {id: 1, name: "تای ماساژ سنتی", duration: 60, cost: "۱۷۰,۰۰۰", img: "img/insta/thai03.jpg"},
     {id: 2, name: "ماساژ تلفیقی", description: "تای ماساژ - آروما - ماساژ پا", duration: 60, cost: "۲۰۰,۰۰۰", img: "img/insta/aromatherapy06.jpg"},
     {id: 3, name: "ماساژ پا", duration: 60, cost: "۱۵۰,۰۰۰", img: "img/insta/foot02.jpg"},
@@ -43,8 +43,8 @@ export default {
     {id: 9, name: "ماساژ شمع", duration: 60, cost: "۲۵۰,۰۰۰", img: "img/candles5.jpg"},
   ],
   poolServices: [
-    {id: 10, name: "آرماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 60, cost: "۱۱۰,۰۰۰", img: "img/insta/aromatherapy02.jpg"},
-    {id: 11, name: "آرماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 30, cost: "۶۰,۰۰۰", img: "img/insta/aromatherapy05.jpg"},
+    {id: 10, name: "آروماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 60, cost: "۱۱۰,۰۰۰", img: "img/insta/aromatherapy02.jpg"},
+    {id: 11, name: "آروماتراپی", description: "ماساژ روغن گیاهی معطر", duration: 30, cost: "۶۰,۰۰۰", img: "img/insta/aromatherapy05.jpg"},
     {id: 12, name: "حمام سنتی", cost: "3۵,۰۰۰", img: "img/insta/salt02.jpg"},
     {id: 13, name: "حمام سنتی ", description: "به همراه اسکرایپ بدن", cost: "۵۰,۰۰۰", img: "img/insta/salt01.jpg"},
   ],

@@ -5,7 +5,8 @@ import { createUser, getUser, getUsers, updateUser, removeUser, login } from './
 
 
 const config = {
-  base_url: "http://server.adakspa.com/api/v1",
+  // base_url: "http://server.adakspa.com/api/v1",
+  base_url: "http://localhost:8000/api/v1",
   default_params: () => (store.getState().user.accessToken
     ? { headers: { Authorization: "Bearer " + store.getState().user.accessToken } }
     : {}),

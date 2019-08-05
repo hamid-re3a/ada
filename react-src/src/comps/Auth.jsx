@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, Modal, Tab, Form, Popup, Icon, Header, Divider, Message } from 'semantic-ui-react';
+import { Button, Modal, Tab, Form, Popup, Icon, Header, Divider, Message, Container } from 'semantic-ui-react';
 
 import AbstractForm from './AbstractForm';
 
 import { connect } from "react-redux";
-import { ACT_signin, ACT_signup, ACT_signout } from "redux/action/user";
+import { ACT_signin, ACT_signup, ACT_signout, ACT_setUser } from "redux/action/user";
 
 
 function Auth({ isAuthenticated, inverted = false, signup, signin, signout }) {
@@ -59,16 +59,32 @@ class AuthControls extends React.Component {
 }
 
 class SignUp extends AbstractForm {
+  constructor() {
+    super();
+    this.setState({
+      error: null
+    })
+  }
   submit = () => {
     const { username, password, passwordConfirm } = this.state;
-    this.props.signup(username, password, passwordConfirm);
-    this.props.close();
+    this.props.signup(username, password, passwordConfirm)
+      .then((rs) => {
+        if (rs.success === false) 
+          this.setState({
+            error: rs.response.data.result_message
+          })
+        
+    });
+    // this.props.close();
   }
   render() {
     return (
       <Form>
         <Header as='h2' textAlign={"center"}>فرم ثبت نام</Header>
         <Divider />
+        <Form.Button basic style={this.state.error != null ? null : { display: 'none' }} size="large" fluid color='red'>
+          {this.state.error}
+        </Form.Button>
         <br />
         <Form.Input label="شماره موبایل"
           {...this.commonProps("username")} />
@@ -76,7 +92,6 @@ class SignUp extends AbstractForm {
           {...this.commonProps("password")} />
         <Form.Input label="رمز عبور را مجدد وارد کنید" type="password"
           {...this.commonProps("passwordConfirm")} />
-
         <Form.Button color="violet" size="large" fluid
           onClick={this.submit}>
           عضویت
@@ -87,16 +102,35 @@ class SignUp extends AbstractForm {
 }
 
 class SignIn extends AbstractForm {
+  constructor() {
+    super();
+    this.setState({
+      error: ''
+    })
+  }
   submit = () => {
     const { username, password } = this.state;
-    this.props.signin(username, password);
-    this.props.close();
+    this.props.signin(username, password).then((rs) => {
+      if (rs.success === false) 
+        this.setState({
+          error: rs.response.data.result_message
+        })
+
+        
+      }
+
+
+    );;
+    // this.props.close();
   }
   render() {
     return (
       <Form error={!!this.state.error}>
         <Header as='h2' textAlign={"center"}>فرم ورود</Header>
         <Divider />
+        <Form.Button basic style={this.state.error != null ? null : { display: 'none' }} size="large" fluid color='red'>
+          {this.state.error}
+        </Form.Button>
         <br />
         <Form.Input label="شماره موبایل"
           {...this.commonProps("username")} />
@@ -107,9 +141,7 @@ class SignIn extends AbstractForm {
           onClick={this.submit}>
           ورود
         </Form.Button>
-        {!this.state.error ? null :
-          <Message error content={this.state.error} />
-        }
+
       </Form>
     );
   }
@@ -136,6 +168,7 @@ const mapDispatchToProps = dispatch => ({
   signup: (username, password, passwordConfirm) => dispatch(ACT_signup(username, password, passwordConfirm)),
   signin: (username, password) => dispatch(ACT_signin(username, password)),
   signout: () => dispatch(ACT_signout()),
+  dispatch
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);
