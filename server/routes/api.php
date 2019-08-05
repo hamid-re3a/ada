@@ -23,12 +23,14 @@ Route::group(['prefix'=>'v1','namespace' => 'api\v1'], function () {
 
 
 
+    Route::get('orders/all','OrderController@all');
 
     Route::group(['middleware'=>'auth:api'],function (){
         //Login required routes
-        Route::get('orders','OrderController@index');
         Route::group(['middleware'=>'onlyActiveUser'],function () {
             // These routes can be accessed only by actived users
+            Route::get('orders','OrderController@index');
+
 
         });
     });

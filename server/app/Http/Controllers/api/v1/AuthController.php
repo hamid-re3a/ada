@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Validator;
 class AuthController extends ApiController
 {
     private $client_id = 2;
-    private $client_secret = "0kDPJXJJUA7D36DCYEfB6RUSpBPAx0klB3I2WxME";
+    private $client_secret = "wRy6HYhTVeSJndO8ZbGmqywFJVpySaUD5OlYgu3r";
 
     /**
      * @return int
@@ -66,13 +66,21 @@ class AuthController extends ApiController
     public function login(Request $request)
     {
 
-
+        $messages = [
+            'phone_number.required' => 'لطفا فیلد شماره همراه را پر کنید',
+            'phone_number.regex' => 'شماره همراه معتبر وارد کنید',
+            'phone_number.required' => 'لطفا فیلد شماره همراه را پر کنید',
+            'phone_number.unique' => 'شماره دیگری انتخاب کنید این شماره قبلا استفاده شده است',
+            'password.min' => 'رمز عبور باید حداقل 6 کاراکتر باشد',
+            'password.required' => 'لطفا فیلد رمز عبور را پر کنید',
+            'password.confirmed' => 'فیلد تایید رمز عبور همخوانی ندارد',
+        ];
         $rules = array(
             'phone_number' => array('required', 'regex:/^[ ]*(?:0|\+|00)?(?:98)?9\d{9}[ ]*$/', 'exists:users'),
             'password' => array('required', 'min:6'),
         );
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return $this->respondBadRequest($validator->errors()->first());
         }

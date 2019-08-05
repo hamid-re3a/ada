@@ -36,7 +36,7 @@ class UserController extends ApiController
 
         $_transformed_data = $this->userTransformer->transformPaginationCollection($_users);
         $_response_data = $this->mergeDataWithPaginationInfo($_users, $_transformed_data);
-        $message = trans('api.messages.fetched_successfully', ['className' => trans('controllers.'.class_basename($this).'.name')]);
+        $message = trans('api.messages.fetched_successfully', ['className' => trans('controllers.' . class_basename($this) . '.name')]);
         return $this->respondSuccessfully($message, $_response_data);
     }
 
@@ -52,22 +52,35 @@ class UserController extends ApiController
             'username' => array('unique:users', 'regex:/^[a-zA-Z\d_]{3,100}$/'),
             'name' => array('required', 'string', 'max:255'),
         );
+        $messages = [
+            'phone_number.required' => 'لطفا فیلد شماره همراه را پر کنید',
+            'phone_number.regex' => 'شماره همراه معتبر وارد کنید',
+            'phone_number.required' => 'لطفا فیلد شماره همراه را پر کنید',
+            'phone_number.unique' => 'شماره دیگری انتخاب کنید این شماره قبلا استفاده شده است',
+            'password.min' => 'رمز عبور باید حداقل 6 کاراکتر باشد',
+            'password.required' => 'لطفا فیلد رمز عبور را پر کنید',
+            'password.confirmed' => 'فیلد تایید رمز عبور همخوانی ندارد',
+            'username.regex' => 'نام کاربری باید بیش از سه کاراکتر و تنها با حروف لاتین ،عدد و زیر خط باشد',
+            'username.unique' => 'نام کاربری دیگری انتخاب کنید این نام قبلا انتخاب شده است',
+            'name.string' => 'نام باید یک رشته باشد',
+            'name.max' => 'نام باید ماکزیمم 255 کاراکتر باشد',
+        ];
 
-        $validator = Validator::make($request->all(), $rules);
+        $validator = Validator::make($request->all(), $rules, $messages);
         if ($validator->fails()) {
             return $this->respondBadRequest($validator->errors()->first());
         }
 
         $input = $request->only('phone_number', 'password', 'username', 'name');
 
-        if(isset($input['username']))
+        if (isset($input['username']))
             $input['username'] = $this->createUniqueUsername($input['username'], $input['name']);
         else
             $input['username'] = $this->createUniqueUsername("", $input['name']);
         $user = User::create($input);
         $message = 'حساب شما با موفقیت ساخته شد به خانواده Adak اسپا خوش آمدید';
-        $this->sendSMS($input['phone_number'],$message );
-        return $this->respondSuccessfully($message,$user);
+        $this->sendSMS($input['phone_number'], $message);
+        return $this->respondSuccessfully($message, $user);
 
     }
 

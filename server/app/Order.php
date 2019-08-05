@@ -11,4 +11,9 @@ class Order extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function scopeTomorrow($query)
+    {
+        $query->where('date', '=',date("Y-m-d",strtotime("+1 days")));
+    }
 }
