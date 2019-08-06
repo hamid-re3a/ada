@@ -39,7 +39,7 @@ class DesktopContainer extends Component {
           once={false}
         >
           <Hero />
-          <ResponsiveProps itemsPerRow={3}>
+          <ResponsiveProps items_per_row={3}>
             {children}
           </ResponsiveProps>
         </Visibility>
@@ -57,7 +57,7 @@ class ResponsiveProps extends React.Component {
 
     const childrenWithExtraProp = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        itemsPerRow: this.props.itemsPerRow
+        items_per_row: this.props.items_per_row
       });
     });
 
@@ -79,7 +79,7 @@ class MobileContainer extends Component {
         maxWidth={Responsive.onlyMobile.maxWidth}
       >
         <Hero mobile />
-        <ResponsiveProps itemsPerRow={1}>
+        <ResponsiveProps items_per_row={1}>
           {children}
         </ResponsiveProps>
       </Responsive>
@@ -107,7 +107,7 @@ const Hero = ({ mobile }) => (
       <Header as='h3' style={{ color: 'white', textShadow: '0 0 3px black' }}>خدمات حرفه‌ای ماساژ در Adak Spa تجربه کنید</Header>
       <div style={{ height: 32 }} />
       <Link to='/reserve'><Button color="violet">رزرو</Button></Link>
-      <Link to='/services'><Button color="white" >مشاهده خدمات</Button></Link>
+      <Link to='/services'><Button >مشاهده خدمات</Button></Link>
     </Center>
   </div>
 );
@@ -147,12 +147,12 @@ const Options = () => (
   </Segment>
 );
 
-const ResponsiveServiceItems = ({ itemsPerRow }) => (
+const ResponsiveServiceItems = ({ items_per_row }) => (
   <Container style={styles.bodyRoot} >
     <Header as='h1'>انواع ماساژ</Header>
-    <div class="ui divider"></div>
+    <div className="ui divider"></div>
     <Segment basic>
-      <Card.Group itemsPerRow={itemsPerRow}>
+      <Card.Group items_per_row={items_per_row}>
         <ServiceCard key={data.services[0].name} {...data.services[0]} />
         <ServiceCard key={data.services[1].name} {...data.services[1]} />
         <ServiceCard key={data.services[2].name} {...data.services[2]} />

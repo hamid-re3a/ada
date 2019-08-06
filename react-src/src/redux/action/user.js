@@ -22,13 +22,15 @@ export const ACT_signin = (username, password) =>
   (dispatch, getState, API) => {
     // if (username === "admin" && password === "123")
     //   dispatch(ACT_setUser({ username, accessToken: '1qaz!QAZ' }));
+    return new Promise((resolve, reject) => {
     API.users.login(username, password).then(rs=>{
       if (rs.success !== false) {
         dispatch(ACT_setUser({ accessToken: rs.data.data.access_token }));
+        
       }
-      
-    })
-    return API.users.login(username, password);
+      resolve(rs);
+    });
+  });
   }
 
 export const ACT_signout = () => dispatch => dispatch(ACT_delUser());

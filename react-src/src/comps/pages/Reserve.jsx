@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-  Container, Segment,
+  Container, Segment, Header,
 } from 'semantic-ui-react';
-
+import {connect} from 'react-redux';
 import Template from 'comps/Template';
 import ReserveForm from 'comps/ReserveForm';
 
 
-function Reserve({ location }) {
+function Reserve({ location , isAuthenticated }) {
   let type = location.search;
   if (type.length < 2) type = undefined;
   else {
@@ -18,7 +18,10 @@ function Reserve({ location }) {
     <Template>
       <Container style={styles.bodyRoot}>
         <Segment raised style={styles.formContainer}>
-          <ReserveForm type={type} />
+          {isAuthenticated
+            ? <ReserveForm type={type} />
+            : <Header>Not isAuthenticated</Header>
+          }
         </Segment>
       </Container>
     </Template>
@@ -34,4 +37,8 @@ const styles = {
   },
 };
 
-export default Reserve;
+const mapStateToProps = state => ({
+  isAuthenticated: !!state.user.accessToken,
+});
+
+export default connect(mapStateToProps,null)(Reserve);

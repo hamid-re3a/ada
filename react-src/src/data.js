@@ -5,13 +5,13 @@ export default {
     '۰۲۱-۴۴۶۳۲۴۹۲',
     '۰۲۱-۴۴۶۷۳۴۹۶',
   ],
-  manager: 'جناب آقای بابالو',
+  manager: 'جناب آقای مرتضی بابالو تحت نظر استاد کیانی آذر',
   socialMedia: {
     instagram: "https://www.instagram.com/adakspa",
     telegram: "https://www.t.me/Adakspa",
   },
   images:[
-    {id:0,img: "img/buddha4.jpg"},
+    {id:0,img: "img/buddha4.jpg"},  
     {id:1,img: "img/building.jpg"},
     {id:2,img: "img/building3.jpg"},
     {id:3,img: "img/building5.jpg"},
@@ -87,7 +87,7 @@ export default {
     <p>اسپاها مهم تر شدند تا جایی که در هتل&zwnj;&zwnj;ها و آرامشگاه&zwnj;&zwnj;ها حاضر شدند. خیلی از اسپاهای آرامشگاهی یک فهرست از کلاس&zwnj;&zwnj;های تمرینی اضافه کردند (که معمولا رایگان اند اما گاهاً وجود دارند) و گاهی مربیان شخصی در دسترس اند. بعضی حتی مراکز تندرستی دارند که به طور تخصصی به هدف ارتقای <strong><a href="" target="_blank" rel="noopener noreferrer">سلامتی</a></strong>&nbsp;ایجاد شده اند.</p>
     <p>بنابراین خطوط محو تر شده اند، اما چیزهای اندکی هستند که تغییر نکرده اند. مقصدها همه حول و حوش تندرستی هستند و شامل غذا هم &zwnj;&zwnj;می&zwnj;شوند. اسپاهای کلاسیک آرامشگاهی، گزینه&zwnj;&zwnj;های بیشتری برای تندرستی دارند. قیمت گذاری در اکثر اسپاهای آرامشگاهی ایالات متحده جداگانه است_اقامت، وعده&zwnj;&zwnj;های غذا، کلاس&zwnj;&zwnj;ها و خدمات اسپا جداگانه قبض داده &zwnj;&zwnj;می&zwnj;شوند.</p>
     <p>حدود ۲۰۰۰ آرامشگاه و اسپای هتلی در ایالات متحده وجود دارد که &zwnj;&zwnj;می&zwnj;توانند از اسپاهای کوچک مسافرخانه ای تا اسپاهای بسیار چر زرق و برق لاس&zwnj;وگاس دسته بندی شوند. این دلیل اهمیت تحقیق در مورد ویژگی خاص آنهاست و اینکه چرا نبایستی به لیبل “اسپای آرامشگاهی” اعتماد کرد. بسته به ویژگی&zwnj;&zwnj;ها، اسپاهای آرامشگاهی و هتلی گزینه&zwnj;&zwnj;های بسیار مناسبی برای خانواده&zwnj;&zwnj;ها، زوج&zwnj;&zwnj;ها و مسافران تجاری است. اگر شما &zwnj;&zwnj;می&zwnj;خواهید قادر باشید به تنهایی سفر کنید و به راحتی با مردم ملاقات کنید؛ اسپاهای مقصد (با نام مستعار آرامشگاه اسپا) گزینه&zwnj;&zwnj;های بهتری هستند. اسپاهای کشتی کروز، یک انعطاف از هیئت مدیره برای بهبود تجارب مهمانان که &zwnj;&zwnj;می&zwnj;توانند از بخشی از این گروه دیده شود.</p>
-    <p><strong>&nbsp;<img class="aligncenter size-medium wp-image-15688" src="https://spahana.ir/wp-content/uploads/2017/02/spa-02-300x225.jpg" alt="" width="300" height="225" srcset="https://spahana.com/wp-content/uploads/2017/02/spa-02-300x225.jpg 300w, https://spahana.com/wp-content/uploads/2017/02/spa-02-600x450.jpg 600w, https://spahana.com/wp-content/uploads/2017/02/spa-02-768x576.jpg 768w, https://spahana.com/wp-content/uploads/2017/02/spa-02-700x525.jpg 700w, https://spahana.com/wp-content/uploads/2017/02/spa-02.jpg 800w" sizes="(max-width: 300px) 100vw, 300px"></strong></p>
+    <p><strong>&nbsp;<img src="https://spahana.ir/wp-content/uploads/2017/02/spa-02-300x225.jpg" alt="" width="300" height="225" srcset="https://spahana.com/wp-content/uploads/2017/02/spa-02-300x225.jpg 300w, https://spahana.com/wp-content/uploads/2017/02/spa-02-600x450.jpg 600w, https://spahana.com/wp-content/uploads/2017/02/spa-02-768x576.jpg 768w, https://spahana.com/wp-content/uploads/2017/02/spa-02-700x525.jpg 700w, https://spahana.com/wp-content/uploads/2017/02/spa-02.jpg 800w" sizes="(max-width: 300px) 100vw, 300px"></strong></p>
     <p><strong>چشمه&zwnj;&zwnj;های معدنی اسپا</strong></p>
     <p>این اسپاها یک منبع طبیعی و معدنی آب گرم یا آب دریا روی سایت پیشنهاد &zwnj;&zwnj;می&zwnj;دهند که در آب استفاده &zwnj;&zwnj;می&zwnj;شود. این یک ریشه تاریخی از تجربه اسپا در زمانی دارد که مردم به آب&zwnj;&zwnj;های معدنی برای <strong><a href="" target="_blank" rel="noopener noreferrer">سلامتی</a></strong>&nbsp;شان سفر &zwnj;&zwnj;می&zwnj;کردند. این فرهنگ رجوع به اسپا، در قرن ۱۹، هنگامی که ثروتمندان در مکان&zwnj;&zwnj;های دقیق طراحی شده برای تفریح دور هم جمع &zwnj;&zwnj;می&zwnj;شدند تا ببینند و دیده شوند؛ به اوج خود رسید.</p>
     <p>بسیاری از آنان مثل Greenbrier در ویرجینیای غربی، Omni Homestend در <strong><a href="" target="_blank" rel="noopener noreferrer">چشمه&zwnj;&zwnj;های آب گرم</a></strong> ویرجینیا و اسپاهای Baden-Baden در آلمان هنوز مشغول کارند و طعمی از دوران گذشته در میان پیشنهادهای مدرن بیشتر ارائه &zwnj;&zwnj;می&zwnj;دهند.</p>

@@ -85,10 +85,10 @@ class DesktopContainer extends Component {
               size='large'
             >
               <Container>
-                {items.map(item => {
+                {items.map((item,index) => {
                   if (window.location.pathname.split('/')[1] === item.href.split('/')[1])
-                    return <Link to={item.href}><Menu.Item {...item} active /></Link>
-                  return <Link to={item.href}><Menu.Item {...item} /></Link>
+                    return <Link key={index} to={item.href}><Menu.Item {...item} active /></Link>
+                  return <Link key={index} to={item.href}><Menu.Item {...item} /></Link>
                 })}
                 <Menu.Item position='right'>
                   {/* <Button as='a' inverted={!fixed} color="violet" style={{ marginLeft: '0.5em' }}>
@@ -138,10 +138,10 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          {items.map(item => {
+          {items.map((item,index) => {
                   if (window.location.pathname.split('/')[1] === item.href.split('/')[1])
-                    return <Link to={item.href}><Menu.Item {...item} active /></Link>
-                  return <Link to={item.href}><Menu.Item {...item} /></Link>
+                    return <Link key={index} to={item.href}><Menu.Item {...item} active /></Link>
+                  return <Link key={index} to={item.href}><Menu.Item {...item} /></Link>
                 })}
         </Sidebar>
 

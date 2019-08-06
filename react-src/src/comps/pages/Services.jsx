@@ -33,7 +33,7 @@ class DesktopContainer extends Component {
         <Visibility
           once={false}
         >
-          <ResponsiveProps itemsPerRow={5}>
+          <ResponsiveProps items_per_row={5}>
             {children}
           </ResponsiveProps>
         </Visibility>
@@ -51,7 +51,7 @@ class ResponsiveProps extends React.Component {
 
     const childrenWithExtraProp = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        itemsPerRow: this.props.itemsPerRow
+        items_per_row: this.props.items_per_row
       });
     });
 
@@ -72,7 +72,7 @@ class MobileContainer extends Component {
         getWidth={getWidth}
         maxWidth={Responsive.onlyMobile.maxWidth}
       >
-        <ResponsiveProps itemsPerRow={2}>
+        <ResponsiveProps items_per_row={2}>
           {children}
         </ResponsiveProps>
       </Responsive>
@@ -89,7 +89,7 @@ const ResponsiveContainer = ({ children }) => (
     <MobileContainer>{children}</MobileContainer>
   </div>
 )
-const ResponsiveServiceItems = ({ itemsPerRow , title ,subtitle , data_collection }) => (
+const ResponsiveServiceItems = ({ items_per_row , title ,subtitle , data_collection }) => (
   <Container>
   <Segment basic>
 
@@ -100,7 +100,7 @@ const ResponsiveServiceItems = ({ itemsPerRow , title ,subtitle , data_collectio
     <br />
     <br />
 
-    <Card.Group itemsPerRow={itemsPerRow}>
+    <Card.Group items_per_row={items_per_row}>
       {data_collection.map(s =>
         <ServiceCard key={s.name} {...s} />
       )}

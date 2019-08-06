@@ -61,21 +61,22 @@ class AuthControls extends React.Component {
 class SignUp extends AbstractForm {
   constructor() {
     super();
-    this.setState({
+    this.state = {
       error: null
-    })
+    }
   }
   submit = () => {
     const { username, password, passwordConfirm } = this.state;
     this.props.signup(username, password, passwordConfirm)
       .then((rs) => {
-        if (rs.success === false) 
+        if (rs.success === false)
           this.setState({
             error: rs.response.data.result_message
           })
-        
-    });
-    // this.props.close();
+        else
+          this.props.close();
+
+      });
   }
   render() {
     return (
@@ -104,24 +105,23 @@ class SignUp extends AbstractForm {
 class SignIn extends AbstractForm {
   constructor() {
     super();
-    this.setState({
-      error: ''
-    })
+    this.state = {
+      error: null
+    };
   }
   submit = () => {
     const { username, password } = this.state;
     this.props.signin(username, password).then((rs) => {
-      if (rs.success === false) 
+      console.log(rs)
+      if (rs.success === false)
         this.setState({
           error: rs.response.data.result_message
         })
+      else
+        this.props.close();
 
-        
-      }
+    });
 
-
-    );;
-    // this.props.close();
   }
   render() {
     return (
@@ -167,8 +167,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   signup: (username, password, passwordConfirm) => dispatch(ACT_signup(username, password, passwordConfirm)),
   signin: (username, password) => dispatch(ACT_signin(username, password)),
-  signout: () => dispatch(ACT_signout()),
-  dispatch
+  signout: () => dispatch(ACT_signout())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Auth);

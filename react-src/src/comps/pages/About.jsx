@@ -30,14 +30,6 @@ function About() {
           </p>
           <br/><br/><br/>
           <Divider horizontal>
-            فواید ماساژ 
-          </Divider>
-          <br/>
-          <p>
-            . خدمات ماساژ به همراه استاندارد برای طیف گسترده‌ای از شرایط  ارائه می‌شود.
-          </p>
-          <br/><br/><br/>
-          <Divider horizontal>
             مدیریت
           </Divider>
           <p>

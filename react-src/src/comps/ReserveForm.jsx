@@ -1,6 +1,5 @@
 import React from 'react';
 import { Form, Label } from 'semantic-ui-react';
-
 import AbstractForm from 'comps/AbstractForm';
 import { faDigit } from 'utils';
 import data from 'data';

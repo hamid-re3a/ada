@@ -7,7 +7,7 @@ import data from 'data';
 
 
 function BlogPost({ match }) {
-  let articles = data.articles.filter(item => item.id == match.params.id);
+  let articles = data.articles.filter(item => item.id === match.params.id);
   let article = articles[0];
   return (
     <Template gray={false}>

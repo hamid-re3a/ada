@@ -10,7 +10,7 @@ const config = {
   default_params: () => (store.getState().user.accessToken
     ? { headers: { Authorization: "Bearer " + store.getState().user.accessToken } }
     : {}),
-  default_then: resolve => response => resolve(response),
+  default_then: resolve => response => resolve({success: true,...response}),
   default_catch: resolve => response => resolve({ success: false, text: 'خطا در ارتباط با سرور', ...response }),
 };
 
