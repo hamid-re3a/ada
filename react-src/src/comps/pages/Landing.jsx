@@ -39,7 +39,7 @@ class DesktopContainer extends Component {
           once={false}
         >
           <Hero />
-          <ResponsiveProps items_per_row={3}>
+          <ResponsiveProps itemsPerRow={3}>
             {children}
           </ResponsiveProps>
         </Visibility>
@@ -57,7 +57,7 @@ class ResponsiveProps extends React.Component {
 
     const childrenWithExtraProp = React.Children.map(this.props.children, child => {
       return React.cloneElement(child, {
-        items_per_row: this.props.items_per_row
+        itemsPerRow: this.props.itemsPerRow
       });
     });
 
@@ -79,7 +79,7 @@ class MobileContainer extends Component {
         maxWidth={Responsive.onlyMobile.maxWidth}
       >
         <Hero mobile />
-        <ResponsiveProps items_per_row={1}>
+        <ResponsiveProps itemsPerRow={1}>
           {children}
         </ResponsiveProps>
       </Responsive>
@@ -122,16 +122,14 @@ const Options = () => (
       <Grid.Row>
         <Grid.Column width={8}>
           <Header as='h3' style={{ fontSize: '2em' }}>
-            خدمات حرفه‌ای ماساژ در Adak Spa
+           Adak Spa
           </Header>
           <p style={{ fontSize: '1.33em', textAlign: 'justify' }}>
-            اینجا جایی است که شما ‌‌می‌توانید حداقل یک ماساژ و بهسازی صورت در یک ملاقات روزانه داشته باشید. حدود ۸۰ درصد از اسپاها، اسپاهای روزانه هستند.
+          اینجا جایگاهی است که میتوان به خویشتن احترام گذاشت . در شلوغی و روزمرگی های طولانی و خسته کننده زندگی شهری امروز یکی از گزینه های رفع خستگی و آرامش ماساژ می باشد . 
+
           </p>
-          <Header as='h3' style={{ fontSize: '2em' }}>
-            فواید ماساژ 
-          </Header>
           <p style={{ fontSize: '1.33em', textAlign: 'justify' }}>
-            . خدمات ماساژ به همراه استاندارد برای طیف گسترده‌ای ارائه می‌شود
+          امید به اینکه بتوانیم خدمتی شایسته به شما عزیزان ارائه دهیم
           </p>
         </Grid.Column>
         <Grid.Column floated='right' width={6}>
@@ -147,12 +145,12 @@ const Options = () => (
   </Segment>
 );
 
-const ResponsiveServiceItems = ({ items_per_row }) => (
+const ResponsiveServiceItems = ({ itemsPerRow }) => (
   <Container style={styles.bodyRoot} >
     <Header as='h1'>انواع ماساژ</Header>
     <div className="ui divider"></div>
     <Segment basic>
-      <Card.Group items_per_row={items_per_row}>
+      <Card.Group itemsPerRow={itemsPerRow}>
         <ServiceCard key={data.services[0].name} {...data.services[0]} />
         <ServiceCard key={data.services[1].name} {...data.services[1]} />
         <ServiceCard key={data.services[2].name} {...data.services[2]} />

@@ -26,11 +26,5 @@ duration, cost, img="/img/candles5.jpg" }) {
   );
 }
 
-const styles = {
-  imgFiller: {
-    height: 256,
-    backgroundColor: '#321',
-  },
-};
 
 export default ServiceCard;

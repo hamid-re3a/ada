@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   Container, Segment, Header, Image, Icon, Grid,
 } from 'semantic-ui-react';
@@ -33,10 +32,10 @@ function Contact() {
               <Header>
                 در شبکه‌های اجتماعی
               </Header>
-              <a target="_blank" href={data.socialMedia.instagram}>
+              <a target="_blank noopener noreferrer" href={data.socialMedia.instagram}>
                 <Icon name="instagram" size="huge" color="red" />
               </a>
-              <a target="_blank" href={data.socialMedia.telegram}>
+              <a target="_blank noopener noreferrer" href={data.socialMedia.telegram}>
                 <Icon name="telegram" size="huge" color="blue" />
               </a>
               <div style={{ clear: 'both' }}></div>

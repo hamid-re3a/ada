@@ -29,11 +29,8 @@ const colItems = {
     { key: 'email', name: 'nobody@nowhere.com' },
   ],
 };
-colItems[1].map(item => { item.style = { ':hover': { color: 'violet' } } });
+colItems[1].map(item => { return item.style = { ':hover': { color: 'violet' }  }  });
 
-const icons = [
-  'twitter', 'instagram', 'facebook', 'youtube'
-];
 
 function Footer() {
   return (
@@ -48,10 +45,10 @@ function Footer() {
             <Header as='h4' style={styles.colHeader}>ارتباط با ما</Header>
             <p>{data.address}</p>
             {data.phones.map(phone => <p key={phone}>{phone}</p>)}
-            <a target="_blank" href={data.socialMedia.instagram}>
+            <a target="_blank noopener noreferrer" href={data.socialMedia.instagram}>
               <Icon name="instagram" size="big" color="red" />
             </a>
-            <a target="_blank" href={data.socialMedia.telegram}>
+            <a target="_blank noopener noreferrer" href={data.socialMedia.telegram}>
               <Icon name="telegram" size="big" color="blue" />
             </a>
             {/* {icons.map(icon =>

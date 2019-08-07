@@ -1,19 +1,9 @@
-import React, { Component } from 'react'
-import Footer from 'comps/Footer';
-import PropTypes from 'prop-types'
-import {Link} from 'react-router-dom'
-import {
-  Button,
-  Container,
-  Icon,
-  Menu,
-  Responsive,
-  Segment,
-  Sidebar,
-  Visibility, 
-} from 'semantic-ui-react';
-
-import Auth from 'comps/Auth';
+import React, {Component} from "react";
+import Footer from "comps/Footer";
+import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
+import {Container, Icon, Menu, Responsive, Segment, Sidebar, Visibility} from "semantic-ui-react";
+import Auth from "comps/Auth";
 
 
 // Heads up!
@@ -47,10 +37,6 @@ const items = [
   { key: 'contact', name: 'تماس با ما', href: '/contact' },
 ];
 
-
-const NavComponent = ()=>{
-  return
-}
 
 class DesktopContainer extends Component {
   state = {}

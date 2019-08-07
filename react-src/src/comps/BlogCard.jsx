@@ -1,11 +1,11 @@
-﻿import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Item, Segment, Icon } from 'semantic-ui-react';
+﻿import React from "react";
+import {Link} from "react-router-dom";
+import {Button, Item, Segment} from "semantic-ui-react";
 
 function BlogCard({ id = 1, title, content, image, date }) {
   var contento = unescape(content).replace(/(<([^>]+)>)/ig, "");
 
-  var parser = new DOMParser;
+  var parser = new DOMParser();
   var dom = parser.parseFromString(
     '<!doctype html><body>' + contento,
     'text/html');

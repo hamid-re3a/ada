@@ -20,7 +20,11 @@ function Reserve({ location , isAuthenticated }) {
         <Segment raised style={styles.formContainer}>
           {isAuthenticated
             ? <ReserveForm type={type} />
-            : <Header>Not isAuthenticated</Header>
+            : <React.Fragment>
+            <div className="center" >
+              <Header as="h1">ابتدا وارد سایت شوید</Header>
+            </div>
+          </React.Fragment>
           }
         </Segment>
       </Container>

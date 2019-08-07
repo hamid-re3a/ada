@@ -1,8 +1,6 @@
-﻿import React from 'react';
-import { Link } from 'react-router-dom';
-import { Card, Button, Image } from 'semantic-ui-react';
-
-import { faDigit } from 'utils';
+﻿import React from "react";
+import {Card, Button, Image} from "semantic-ui-react";
+import {faDigit} from "utils";
 
 
 function CourseCard({ id, name, description, duration, cost, img="/img/candles5.jpg", height=140 }) {
@@ -24,11 +22,5 @@ function CourseCard({ id, name, description, duration, cost, img="/img/candles5.
   );
 }
 
-const styles = {
-  imgFiller: {
-    height: 256,
-    backgroundColor: '#321',
-  },
-};
 
 export default CourseCard;

@@ -1,10 +1,8 @@
-import React from 'react';
-import { Button, Modal, Tab, Form, Popup, Icon, Header, Divider, Message, Container } from 'semantic-ui-react';
-
-import AbstractForm from './AbstractForm';
-
-import { connect } from "react-redux";
-import { ACT_signin, ACT_signup, ACT_signout, ACT_setUser } from "redux/action/user";
+import React from "react";
+import {Button, Modal, Form, Popup, Icon, Header, Divider} from "semantic-ui-react";
+import AbstractForm from "./AbstractForm";
+import {connect} from "react-redux";
+import {ACT_signin, ACT_signup, ACT_signout} from "redux/action/user";
 
 
 function Auth({ isAuthenticated, inverted = false, signup, signin, signout }) {
@@ -112,7 +110,6 @@ class SignIn extends AbstractForm {
   submit = () => {
     const { username, password } = this.state;
     this.props.signin(username, password).then((rs) => {
-      console.log(rs)
       if (rs.success === false)
         this.setState({
           error: rs.response.data.result_message
