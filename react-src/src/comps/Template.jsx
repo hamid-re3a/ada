@@ -30,7 +30,7 @@ const items = [
   { key: 'services', name: 'خدمات', href: '/services' },
   { key: 'courses', name: 'دوره‌های آموزشی', href: '/courses' },
   { key: 'reserve', name: 'رزرو', href: '/reserve' },
-  { key: 'track', name: 'پیگیری رزرو', href: '/track' },
+  { key: 'track', name: 'جدول رزروها', href: '/track' },
   { key: 'gallery', name: 'گالری', href: '/gallery' },
   { key: 'blog', name: 'بلاگ', href: '/blog' },
   { key: 'about', name: 'درباره ما', href: '/about' },

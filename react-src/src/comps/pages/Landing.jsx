@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   Container, Segment,
   Button, Header, Card, Grid, Image,
-  Responsive, Divider,
+  Responsive, Icon,
   Visibility,
 } from 'semantic-ui-react';
 
@@ -14,6 +14,7 @@ import ServiceCard from 'comps/ServiceCard';
 import BlogCard from 'comps/BlogCard';
 import data from 'data';
 
+import { faDigit } from 'utils';
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -103,11 +104,11 @@ ResponsiveContainer.propTypes = {
 const Hero = ({ mobile }) => (
   <div style={!mobile ? styles.heroRoot : styles.heroRootMobile}>
     <Center >
-      <Header as='h1' style={{ color: 'white', textShadow: '0 0 3px black' }}>رزرو ماساژ</Header>
-      <Header as='h3' style={{ color: 'white', textShadow: '0 0 3px black' }}>خدمات حرفه‌ای ماساژ در Adak Spa تجربه کنید</Header>
+      {/* <Header as='h1' style={{ color: 'white', textShadow: '0 0 3px black' }}>رزرو ماساژ</Header>
+      <Header as='h3' style={{ color: 'white', textShadow: '0 0 3px black' }}>خدمات حرفه‌ای ماساژ در Adak Spa تجربه کنید</Header> */}
       <div style={{ height: 32 }} />
-      <Link to='/reserve'><Button color="violet">رزرو</Button></Link>
-      <Link to='/services'><Button >مشاهده خدمات</Button></Link>
+      {/* <Link to='/reserve'><Button color="violet">رزرو</Button></Link>
+      <Link to='/services'><Button >مشاهده خدمات</Button></Link> */}
     </Center>
   </div>
 );
@@ -136,11 +137,6 @@ const Options = () => (
           <Image bordered rounded size='large' src='/img/oil.jpg' />
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row>
-        <Grid.Column textAlign='center'>
-          <Button size='huge'>همین حالا ببینید</Button>
-        </Grid.Column>
-      </Grid.Row>
     </Grid>
   </Segment>
 );
@@ -167,8 +163,39 @@ function Landing() {
     <Template gray={false}>
       <ResponsiveContainer>
 
-        <Options />
+        <Segment style={{ padding: '0em' }}>
+          <Grid celled='internally' columns='equal' >
+            <Grid.Row textAlign='center'>
+             
+            <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  <Icon name="clock outline" size="huge"/>
+                  ساعت کار بانوان
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>{faDigit('9 صبح تا 2 بعد از ظهر')}</p>
+              </Grid.Column>
+              
+              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  <Icon name="clock outline" size="huge"/>
+                  ساعت کار آقایان
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>{faDigit('2 بعد از ظهر تا 10 شب')}</p>
+              </Grid.Column>
+              
+              <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
+                <Header as='h3' style={{ fontSize: '2em' }}>
+                  <Icon name="calendar outline" size="huge"/>
+                  جمعه ها
+                </Header>
+                <p style={{ fontSize: '1.33em' }}>{faDigit('9 صبح تا 9 شب vip آقایان')}</p>
+              </Grid.Column>
+              
+            </Grid.Row>
+          </Grid>
+        </Segment>
 
+        <Options />
         <ResponsiveServiceItems />
 
 
@@ -181,20 +208,22 @@ function Landing() {
                 </Header>
                 <p style={{ fontSize: '1.33em' }}>تجربه‌ منحصر به فرد آرامش</p>
               </Grid.Column>
+            
               <Grid.Column style={{ paddingBottom: '5em', paddingTop: '5em' }}>
                 <Header as='h3' style={{ fontSize: '2em' }}>
-                  با مدیریت محترم
+                  با مدیریت 
                 </Header>
-                <p style={{ fontSize: '1.33em' }}>
-                  {/* <Image avatar src='/images/avatar/large/nan.jpg' /> */}
-                  {data.manager}
-                </p>
+                
+<p  style={{ fontSize: '1.33em' }}>آقای مرتضی بابالو(مدرس بین المللی  مدرسه Phenkhae) تایلند</p>
+<Header as='h4' style={{ fontSize: '1.5em' }}>تحت نظارت </Header>
+<p  style={{ fontSize: '1.33em' }}>جناب آقای استاد کیانی آذر 
+(استاد بزرگ Thai)</p>
               </Grid.Column>
             </Grid.Row>
           </Grid>
         </Segment>
 
-        <Container style={styles.bodyRoot}>
+        {/* <Container style={styles.bodyRoot}>
           <Header as='h1'>آخرین آموزش ها</Header>
           <Divider />
           <Segment basic>
@@ -205,7 +234,7 @@ function Landing() {
           <div className='center' style={{ margin: 32 }}>
             <Button as={Link} to='/blog' size="huge">مشاهده همه‌ی آموزش‌ها</Button>
           </div>
-        </Container>
+        </Container> */}
 
       </ResponsiveContainer>
     </Template>
@@ -215,10 +244,10 @@ function Landing() {
 const styles = {
   heroRoot: {
     backgroundColor: '#e0e0e0',
-    backgroundImage: `url('/img/lobby2.jpg')`,
+    backgroundImage: `url('/img/new/front.jpg')`,
+    backgroundImage: `url('/img/main.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: "center",
-    backgroundPositionY: -128,
     backgroundRepeat: "no-repeat",
     boxShadow: "inset 0px 0px 200px 140px rgba(0, 0, 0, .99)",
     height: 500,
@@ -226,6 +255,7 @@ const styles = {
   heroRootMobile: {
     backgroundColor: '#e0e0e0',
     backgroundImage: `url('/img/building.jpg')`,
+    backgroundImage: `url('/img/main.jpg')`,
     backgroundSize: 'cover',
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",

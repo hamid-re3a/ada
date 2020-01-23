@@ -1,8 +1,8 @@
 import React from "react";
-import {Button, Modal, Form, Popup, Icon, Header, Divider} from "semantic-ui-react";
+import { Button, Modal, Form, Popup, Icon, Header, Divider } from "semantic-ui-react";
 import AbstractForm from "./AbstractForm";
-import {connect} from "react-redux";
-import {ACT_signin, ACT_signup, ACT_signout} from "redux/action/user";
+import { connect } from "react-redux";
+import { ACT_signin, ACT_signup, ACT_signout } from "redux/action/user";
 
 
 function Auth({ isAuthenticated, inverted = false, signup, signin, signout }) {
@@ -13,11 +13,15 @@ function Auth({ isAuthenticated, inverted = false, signup, signin, signout }) {
 }
 
 class AuthControls extends React.Component {
-  state = { open: false, tab: 0 };
+  state = { open: false, tab: 0, showMessage: false, message: null };
   signupClicked = () => this.setState({ open: true, tab: 0 });
   signinClicked = () => this.setState({ open: true, tab: 1 });
   close = () => this.setState({ open: false });
   tabChanged = (e, { activeIndex }) => this.setState({ tab: activeIndex });
+
+
+  showMessage = (message) => this.setState({ showMessage: true, message });
+  closeMessage = (message) => this.setState({ showMessage: false, message: null });
   render() {
     const { inverted, signup, signin } = this.props;
     return (
@@ -29,6 +33,12 @@ class AuthControls extends React.Component {
         <Button onClick={this.signupClicked} inverted={inverted}>
           عضویت
         </Button>
+        <Modal open={this.state.showMessage}  onClose={this.closeMessage} basic size='small'>
+          <Header icon='alarm' content="هشدار"/>
+          <Modal.Content>{this.state.message}
+            </Modal.Content >
+         
+        </Modal>
         <Modal open={this.state.open} onClose={this.close} size="tiny">
           {/* <Tab
             activeIndex={this.state.tab}
@@ -47,8 +57,8 @@ class AuthControls extends React.Component {
           /> */}
           <Modal.Content>
             {this.state.tab === 0
-              ? <SignUp signup={signup} close={this.close} />
-              : <SignIn signin={signin} close={this.close} />}
+              ? <SignUp signup={signup} close={this.close} showMessage={this.showMessage} />
+              : <SignIn signin={signin} close={this.close} showMessage={this.showMessage} />}
           </Modal.Content>
         </Modal>
       </React.Fragment>
@@ -64,16 +74,18 @@ class SignUp extends AbstractForm {
     }
   }
   submit = () => {
-    const { username, password, passwordConfirm } = this.state;
-    this.props.signup(username, password, passwordConfirm)
+    const { name, username, password, passwordConfirm } = this.state;
+    this.props.signup(name, username, password, passwordConfirm)
       .then((rs) => {
+          console.log(rs);
         if (rs.success === false)
           this.setState({
             error: rs.response.data.result_message
           })
-        else
+        else {
           this.props.close();
-
+          this.props.showMessage('ثبت نام شما با موفقیت انجام شد');
+        }
       });
   }
   render() {
@@ -85,6 +97,8 @@ class SignUp extends AbstractForm {
           {this.state.error}
         </Form.Button>
         <br />
+        <Form.Input label="نام و نشان"
+          {...this.commonProps("name")} />
         <Form.Input label="شماره موبایل"
           {...this.commonProps("username")} />
         <Form.Input label="رمز عبور" type="password"
@@ -114,8 +128,10 @@ class SignIn extends AbstractForm {
         this.setState({
           error: rs.response.data.result_message
         })
-      else
+      else {
         this.props.close();
+        this.props.showMessage('ثبت نام شما با موفقیت انجام شد');
+      }
 
     });
 
@@ -162,7 +178,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  signup: (username, password, passwordConfirm) => dispatch(ACT_signup(username, password, passwordConfirm)),
+  signup: (name, username, password, passwordConfirm) => dispatch(ACT_signup(name, username, password, passwordConfirm)),
   signin: (username, password) => dispatch(ACT_signin(username, password)),
   signout: () => dispatch(ACT_signout())
 });

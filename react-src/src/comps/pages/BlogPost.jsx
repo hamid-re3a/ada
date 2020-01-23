@@ -7,28 +7,32 @@ import data from 'data';
 
 
 function BlogPost({ match }) {
-  let articles = data.articles.filter(item => item.id === match.params.id);
+  let articles = data.articles.filter(item => item.id == match.params.id);
+  console.log(data.articles[0]);
   let article = articles[0];
   return (
     <Template gray={false}>
       <Container style={styles.bodyRoot}>
         <Segment raised style={{ padding: 32 }}>
-          <div style={{ marginBottom: 32 }}>
-            <span style={{ display: 'inline-block' }}>
-              <Header as="h1">{article.title}</Header>
-              <Header.Subheader>
-                نوشته شده در تاریخ
-                {article.date}
-              </Header.Subheader>
-            </span>
-            <span style={{ display: 'inline-block', float: 'left' }}>
-              <Image rounded bordered src={article.image}
-                style={styles.img} />
-            </span>
-          </div>
-          <div style={{ lineHeight: '2em' }} dangerouslySetInnerHTML={{ __html: article.content }}>
+          {article !== undefined ?
+            <React.Fragment>
+              <div style={{ marginBottom: 32 }}>
+                <span style={{ display: 'inline-block' }}>
+                  <Header as="h1">{article.title}</Header>
+                  <Header.Subheader>
+                    نوشته شده در تاریخ                    {article.date}
+                  </Header.Subheader>
+                </span>
+                <span style={{ display: 'inline-block', float: 'left' }}>
+                  <Image rounded bordered src={"http://adakspa.com/" + article.image}
+                    style={styles.img} />
+                </span>
+              </div>
+              <div style={{ lineHeight: '2em' }} dangerouslySetInnerHTML={{ __html: article.content }}>
 
-          </div>
+              </div>
+            </React.Fragment>
+            : <Header>مقاله یافت نشد</Header>}
           <Button as={Link} to='/blog' color='facebook'  > بازگشت <Icon name='chevron left' style={{ marginRight: 5 }} /></Button>
         </Segment>
       </Container>

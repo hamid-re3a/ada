@@ -19,7 +19,7 @@ const colItems = {
     { key: 'login', name: 'ورود', href: '/' },
     { key: 'signup', name: 'عضویت', href: '/' },
     { key: 'explore', name: 'جستجوی خدمات', href: '/services' },
-    { key: 'track', name: 'پیگیری رزرو', href: '/track' },
+    { key: 'track', name: 'جدول رزروها', href: '/track' },
     { key: 'about', name: 'درباره ما', href: '/about' },
     { key: 'contact', name: 'ارتباط با ما', href: '/contact' },
   ],
@@ -51,6 +51,12 @@ function Footer() {
             <a target="_blank noopener noreferrer" href={data.socialMedia.telegram}>
               <Icon name="telegram" size="big" color="blue" />
             </a>
+            <a target="_blank noopener noreferrer" href={data.socialMedia.facebook}>
+                  <Icon name="facebook" size="big" color="facebook" />
+                </a>
+                <a target="_blank noopener noreferrer" href={data.socialMedia.twitter}>
+                  <Icon name="twitter" size="big" color="twitter" />
+                </a>
             {/* {icons.map(icon =>
               <Icon key={icon} name={icon} size='large' />
             )} */}
